@@ -5,19 +5,22 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner input = new Scanner(System.in);
-		System.out.println("Inserisci il tipo di Elemento Multimediale(immagine / audio / video):");
-		String tipo = input.next();
+		System.out.println("Inserisci il tipo di Elemento Multimediale da inserire");
+		System.out.println("1. Immagine");
+		System.out.println("2. Audio");
+		System.out.println("3. Video");
+		int tipo = input.nextInt();
 		
 		switch(tipo){
-		case "immagine":
+		case 1:
 			System.out.println("Inserisci titolo:");
 			String img = input.next();
-			System.out.println("Inserisci luminosità per la visualizzazione:");
+			System.out.println("Inserisci luminosità per la visualizzazione (1-10):");
 			int lum = input.nextInt();
 			Immagine img1 = new Immagine (img, lum);
 			img1.show();
 			break;
-		case "audio":
+		case 2:
 			System.out.println("Inserisci titolo:");
 			String audio = input.next();
 			System.out.println("Inserisci durata dell' audio:");
@@ -27,7 +30,7 @@ public class Main {
 			RegAudio audio1 = new RegAudio(audio, dur, volume);
 			audio1.play();
 			break;
-		case "video":
+		case 3:
 			System.out.println("Inserisci titolo:");
 			String video = input.next();
 			System.out.println("Inserisci durata del video:");
@@ -41,7 +44,6 @@ public class Main {
 			break;
 		default:
 			System.out.println("Scrivi correttamente!");
-			System.out.println("Inserisci il tipo di Elemento Multimediale(immagine / audio / video):");
 			break;
 		}
 		input.close();

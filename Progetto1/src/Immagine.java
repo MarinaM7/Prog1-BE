@@ -21,7 +21,12 @@ public class Immagine extends ElementoMultim implements Luminosita {
 	}
 
 	public void setLuminosita(int luminosita) {
-		this.luminosita = luminosita;
+		if(luminosita<0 || luminosita>10) {
+			System.out.println("Errore! luminosità deve essere compresa tra 1 e 10");
+		}else {
+			this.luminosita = luminosita;
+		}
+		
 	}
 
 	@Override
